@@ -9,9 +9,9 @@
 #import "AmazonSearch.h"
 #import "Access.h"
 #import <GTMStackTrace.h>
-#import "GTMBase64.h"
 #import "hmac_sha2.h"
 #import <MetaZKit/MZLogger.h>
+#import <GTMNSString+URLArguments.h>
 
 @implementation AmazonSearch
 
@@ -184,7 +184,8 @@
 	int keyLength = [self.secretAccessKey length];
 	hmac_sha256(keyBytes, keyLength, signatureInputBytes, [signatureInput length], mac, SHA256_DIGEST_SIZE);
 
-	return [GTMBase64 stringByEncodingBytes:mac length:SHA256_DIGEST_SIZE];
+	GTMStringEncoding* base64Encoder = [GTMStringEncoding rfc4648Base64WebsafeStringEncoding];
+	return [base64Encoder encode:[NSData dataWithBytesNoCopy:mac length:SHA256_DIGEST_SIZE]];
 }
 
 - (NSString *)testQueryStringForParameterDictionary:(NSDictionary *)theParameters;

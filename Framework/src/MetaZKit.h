@@ -48,5 +48,5 @@
 #import <MetaZKit/NSError+MZScriptError.h>
 #import <MetaZKit/NSString+MimeTypePattern.h>
 
-#import <MetaZKit/GTMNSString+URLArguments.h>
+#import <MetaZKit/GTMStringEncoding.h>
 #import <MetaZKit/GTMNSObject+KeyValueObserving.h>

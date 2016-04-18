@@ -10,7 +10,6 @@
 #import <MetaZKit/MZLogger.h>
 #import <MetaZKit/NSFileManager+MZCreate.h>
 #import <MetaZKit/MZScriptActionsPlugin.h>
-#import <MetaZKit/GTMNSString+URLArguments.h>
 #import <MetaZKit/MZVersion.h>
 #import "MZPlugin+Private.h"
 
